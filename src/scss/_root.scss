@@ -1,0 +1,7 @@
+@import 'mixins';
+#root{
+    height: 100vh;
+    @include d-flex;
+    background-color: #108B1D;
+    flex-direction: column;
+}

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import './scss/index.scss'
+import Background from './components/background'
+import Task from './components/newtask'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Background></Background>
   </React.StrictMode>,
   document.getElementById('root')
 );
