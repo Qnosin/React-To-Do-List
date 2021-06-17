@@ -1,5 +1,17 @@
 .tasks{
-    width: 80%;
+    width: 60%;
     height: 10%;
     background-color: #fff;
+    @include d-flex;
+    justify-content: space-evenly;
 }
+.RemoveBtn{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url('/img/iconmonstr-x-mark-thin.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+@import 'mixins';

@@ -23,6 +23,7 @@ class Background extends Component {
                 </div>
             </div>
             </section>
+            {this.state.click ? <Task info={this.inputRef.current.value}></Task>: null}
             </React.Fragment>
          );
     }
@@ -30,10 +31,7 @@ class Background extends Component {
         if(this.inputRef.current.value === ''){
 
         }else{
-            const message = this.inputRef.current.value
-            const NewMessage = <p>{message}</p>
-            this.setState({click : true})
-            return( <Task> NewMessage</Task>);
+            this.setState({click : true});
             
         } 
     }
