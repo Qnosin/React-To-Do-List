@@ -7,7 +7,8 @@ class Background extends Component {
             this.inputRef = React.createRef();
             this.taskRef = React.createRef();
             this.state = {
-                click : false
+                click : 0,
+                tasks : []
             }
         }
     }
@@ -23,16 +24,19 @@ class Background extends Component {
                 </div>
             </div>
             </section>
-            {this.state.click ? <Task info={this.inputRef.current.value}></Task>: null}
+            {this.state.click > 0 ? <Task key={this.state.click} info={this.inputRef.current.value}></Task>:null};
             </React.Fragment>
          );
     }
-    clickHandler = () =>{
+    clickHandler = (e) =>{
         if(this.inputRef.current.value === ''){
 
         }else{
-            this.setState({click : true});
-            
+            console.log(e)
+            this.setState({click : this.state.click +=1});
+            setTimeout(() => {
+                this.inputRef.current.value = '';
+            }, 100);
         } 
     }
 

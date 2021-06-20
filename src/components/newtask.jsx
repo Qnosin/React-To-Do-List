@@ -13,7 +13,7 @@ class Task extends Component {
     render() { 
         return (
             <React.Fragment>
-                    {this.state.remove ? null :  <section className='tasks' rel={this.refTask}> <p>{this.props.info}</p> <div className='RemoveBtn' onClick={this.RemoveHandler}></div></section>}
+                    {this.state.remove ? null :  <section className={`tasks`} rel={this.refTask}> <p>{this.props.info}</p> <div className='RemoveBtn' onClick={this.RemoveHandler}></div></section>}
                 </React.Fragment>
          );
     }

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import './scss/index.scss'
 import Background from './components/background'
-import Task from './components/newtask'
 ReactDOM.render(
   <React.StrictMode>
     <Background></Background>
