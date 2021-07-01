@@ -11,6 +11,7 @@ class Background extends Component {
                 tasks : []
             }
         }
+        const elem = this.state.tasks;
     }
     render() { 
         return (
@@ -24,7 +25,9 @@ class Background extends Component {
                 </div>
             </div>
             </section>
-            {this.state.click > 0 ? <Task key={this.state.click} info={this.inputRef.current.value}></Task>:null};
+            {this.state.tasks[2]}
+             {this.state.tasks[4]}
+             {this.state.tasks[6]}
             </React.Fragment>
          );
     }
@@ -32,12 +35,19 @@ class Background extends Component {
         if(this.inputRef.current.value === ''){
 
         }else{
-            console.log(e)
             this.setState({click : this.state.click +=1});
-            setTimeout(() => {
-                this.inputRef.current.value = '';
-            }, 100);
-        } 
+            setTimeout(() =>{
+                this.inputRef.current.value = ''
+
+            },100) 
+             return  this.componentDidMount(<Task key={this.state.click} info={this.inputRef.current.value}></Task>)
+        }
+    }
+    componentDidMount(props){
+        this.setState(()=>{
+            this.state.tasks.push(props);
+        })
+
     }
 
     

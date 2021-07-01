@@ -4,6 +4,7 @@
     background-color: #fff;
     @include d-flex;
     justify-content: space-evenly;
+    margin-top: 1rem;
 }
 .RemoveBtn{
     width: 20px;
@@ -14,4 +15,10 @@
     background-repeat: no-repeat;
 
 }
+.checking{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
 @import 'mixins';
+@import 'media'
