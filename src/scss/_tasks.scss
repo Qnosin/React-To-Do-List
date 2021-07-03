@@ -4,6 +4,11 @@
     background-color: #fff;
     @include d-flex;
     justify-content: space-evenly;
+}
+.tasks:nth-child(3){
+    margin-top: 1rem;
+}
+.tasks:nth-child(4) {
     margin-top: 1rem;
 }
 .RemoveBtn{
@@ -19,6 +24,9 @@
     width: 20px;
     height: 20px;
     border-radius: 10px;
+}
+.selected{
+    background-color: red;
 }
 @import 'mixins';
 @import 'media'

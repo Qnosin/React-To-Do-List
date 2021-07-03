@@ -5,7 +5,8 @@ class Task extends Component {
     constructor(props){
         super(props);{
             this.state = {
-                remove: false
+                remove: false,
+                selected : false
             }
             this.refTask = React.createRef();  
         }
@@ -13,12 +14,14 @@ class Task extends Component {
     render() { 
         return (
             <React.Fragment>
-                    {this.state.remove ? null :  <section className={`tasks`} rel={this.refTask}> <p>{this.props.info}</p>  <div className='RemoveBtn' onClick={this.RemoveHandler}></div></section>}
+                    {this.state.remove ? null :  <section onClick={this.handleSelectClick} className={`tasks`} rel={this.refTask}> <p>{this.props.info}</p> </section>}
                 </React.Fragment>
          );
     }
-    RemoveHandler = () =>{
-        this.setState({remove : true})
+     handleSelectClick = (e) =>{
+        const block = e.target
+        block.classList.toggle('selected');
+        this.setState({selected : true})
     }
 }
  

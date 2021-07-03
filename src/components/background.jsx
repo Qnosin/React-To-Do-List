@@ -8,12 +8,12 @@ class Background extends Component {
             this.taskRef = React.createRef();
             this.state = {
                 click : 0,
-                tasks : []
+                tasks : [],
             }
         }
-        const elem = this.state.tasks;
     }
-    render() { 
+    render() {
+         const elem = this.state.tasks; 
         return (
             <React.Fragment>
             <section className='main' rel={this.mainSection}>
@@ -24,10 +24,11 @@ class Background extends Component {
                 <div className='plus-box' onClick={this.clickHandler}></div>
                 </div>
             </div>
+            <div className='delete-btn' onClick={() => this.componentDidMount(this.state.tasks)}>Delete</div>
             </section>
-            {this.state.tasks[2]}
-             {this.state.tasks[4]}
-             {this.state.tasks[6]}
+             {elem[2]}
+             {elem[4]}
+             {elem[6]}
             </React.Fragment>
          );
     }
@@ -40,17 +41,28 @@ class Background extends Component {
                 this.inputRef.current.value = ''
 
             },100) 
-             return  this.componentDidMount(<Task key={this.state.click} info={this.inputRef.current.value}></Task>)
+             return  this.componentDidMount(<Task  key={this.state.click} info={this.inputRef.current.value}></Task>)
         }
     }
     componentDidMount(props){
         this.setState(()=>{
             this.state.tasks.push(props);
         })
-
+        const task = document.querySelectorAll('.tasks');
+        this.deleteHandler(task);
     }
-
     
+    deleteHandler = (props) =>{
+       console.log(props)
+       for(let i of props){
+          if(i.className == 'tasks selected'){
+              document.getElementById('root').removeChild(i);
+              this.setState({click : this.state.click -= 1})
+          }
+       }
+    }
 }
+
+
  
 export default Background;

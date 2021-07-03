@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .todolist-Background{
     width: 100%;
@@ -41,5 +42,17 @@
 .general-function{
     @include d-flex;
     justify-content: space-evenly;
+}
+.delete-btn{
+    background-color: #fff;
+    width: 100px;
+    height: 20%;
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
 }
 @import 'media';
